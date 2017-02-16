@@ -1,0 +1,60 @@
+﻿<Window x:Class="DatabaseFinalProject.CreateAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DatabaseFinalProject"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Whitnet" Height="490" Width="380" ResizeMode="CanMinimize">
+
+    <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" LastChildFill="True">
+        <DockPanel DockPanel.Dock="Top" Height="60" Background="#FFC21F31">
+            <Image DockPanel.Dock="Left" Source="C:\Users\bault18\Source\Repos\Database_Final\DatabaseFinalProject\Icon\Icon.jpg"/>
+            <TextBlock Name="Whitworth_banner" Text="Whitworth University" FontSize="30" FontFamily="Mongolian Baiti" VerticalAlignment="Center" Foreground="#FFFFEEEE"/>
+        </DockPanel>
+
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="* means required fields" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="12"/>
+
+            <TextBlock Text="First Name*" Grid.Row="0" HorizontalAlignment="Center" TextDecorations="Underline" VerticalAlignment="Center" FontSize="18"/>
+            <TextBox Name="set_firstname" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="23" Width="130" />
+
+            <TextBlock Text="Last Name*" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" TextDecorations="Underline" VerticalAlignment="Center" FontSize="18"/>
+            <TextBox Name="set_lastname" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="23" Width="130"/>
+
+            <TextBlock Text="Username*" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="center" TextDecorations="Underline" FontSize="18" />
+            <TextBox Name="set_username" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="23" Width="130"/>
+
+            <TextBlock Text="Password*" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextDecorations="Underline" FontSize="18"/>
+            <PasswordBox Name="set_password" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="23" Width="130"/>
+
+            <TextBlock Text="Home Address" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" TextDecorations="Underline" FontSize="18"/>
+            <TextBox Name="set_address" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Height="23" Width="330"/>
+
+            <TextBlock Text="Major*" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" TextDecorations="Underline" FontSize="18"/>
+            <ComboBox Name="set_major" Loaded="set_major_Loaded" Grid.Row="3" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="150"/>
+
+            <TextBlock Text="Phone Number" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextDecorations="Underline" FontSize="18"/>
+            <TextBox Name="set_phone" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="23" Width="130" PreviewTextInput="ValidateNumber"/>
+            
+            
+            <Button Name="cancel_acc_btn" Content="Cancel" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="cancel_acc_creation" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF1D5AB2"/>
+            <Button Content="Create Account" Grid.Row="5" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" Click="create_acc_btn_press" Height="40" Width="130" FontSize="18" Background="#FFDDDDDD"/>
+        </Grid>
+    </DockPanel>
+</Window>
